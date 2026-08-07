@@ -1,0 +1,5 @@
+{
+  "name": "Voting Application",
+  "description": "A professional, secure, and interactive online voting system for India, featuring Aadhaar-based identity verification and real-time election results.",
+  "requestFramePermissions": []
+}
