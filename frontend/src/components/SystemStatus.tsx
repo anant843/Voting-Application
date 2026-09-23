@@ -14,13 +14,13 @@ export default function SystemStatus() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/stats')
-      .then(res => res.json())
-      .then(data => {
+    fetch(`${import.meta.env.VITE_API_URL}/api/stats`)
+      .then((res) => res.json())
+      .then((data) => {
         setStats(data);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("Failed to fetch backend stats:", err);
         setLoading(false);
       });
@@ -53,7 +53,9 @@ export default function SystemStatus() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-4 pt-2">
-          <div className="text-lg font-bold text-slate-700">{stats?.region || 'India'}</div>
+          <div className="text-lg font-bold text-slate-700">
+            {stats?.region || 'India'}
+          </div>
         </CardContent>
       </Card>
 
@@ -65,7 +67,9 @@ export default function SystemStatus() {
           </CardTitle>
         </CardHeader>
         <CardContent className="p-4 pt-2">
-          <div className="text-lg font-bold text-orange-600 truncate">{stats?.activeElection || 'General 2026'}</div>
+          <div className="text-lg font-bold text-orange-600 truncate">
+            {stats?.activeElection || 'General 2026'}
+          </div>
         </CardContent>
       </Card>
 
